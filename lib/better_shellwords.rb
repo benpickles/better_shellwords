@@ -1,6 +1,8 @@
 require 'strscan'
 
 class BetterShellwords
+  VERSION = '0.1.0'
+
   NON_WHITESPACE = /\S+/
   WHITESPACE = /\s+/
 
