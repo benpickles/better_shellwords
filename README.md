@@ -7,7 +7,7 @@ Quote-aware whitespace string splitting like `Shellwords.split` but doesn't rais
 ```ruby
 require 'quotesplit'
 
-Quotesplit.new("It's a Wonderful Life").split
+Quotesplit.split("It's a Wonderful Life")
 # => ["It's", "a", "Wonderful", "Life"]
 ```
 

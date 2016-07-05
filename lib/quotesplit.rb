@@ -13,6 +13,10 @@ class Quotesplit
     SINGLE_QUOTE => /'[^']+'/,
   }
 
+  def self.split(string)
+    new(string).split
+  end
+
   def initialize(string)
     @scanner = StringScanner.new(string.strip)
   end

@@ -2,6 +2,12 @@ require 'quotesplit'
 
 RSpec.describe Quotesplit do
   describe '.split' do
+    it 'works' do
+      expect(Quotesplit.split('lorem ipsum')).to eql(['lorem', 'ipsum'])
+    end
+  end
+
+  describe '#split' do
     subject { Quotesplit.new(string).split }
 
     context 'empty' do
