@@ -3,12 +3,14 @@ require 'strscan'
 class Quotesplit
   VERSION = '0.1.0'
 
+  DOUBLE_QUOTE = '"'
+  SINGLE_QUOTE = "'"
   NON_WHITESPACE = /\S+/
   WHITESPACE = /\s+/
 
   QUOTES = {
-    '"' => /"[^"]+"/,
-    "'" => /'[^']+'/,
+    DOUBLE_QUOTE => /"[^"]+"/,
+    SINGLE_QUOTE => /'[^']+'/,
   }
 
   def initialize(string)
@@ -21,7 +23,7 @@ class Quotesplit
     while !scanner.eos?
       next_char = scanner.peek(1)
 
-      if next_char == '"' || next_char == "'"
+      if next_char == DOUBLE_QUOTE || next_char == SINGLE_QUOTE
         end_of_quote = scanner.match?(QUOTES.fetch(next_char))
 
         if end_of_quote
