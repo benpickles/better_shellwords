@@ -1,8 +1,8 @@
-require 'better_shellwords'
+require 'quotesplit'
 
-RSpec.describe BetterShellwords do
+RSpec.describe Quotesplit do
   describe '.split' do
-    subject { BetterShellwords.new(string).split }
+    subject { Quotesplit.new(string).split }
 
     context 'empty' do
       let(:string) { '' }

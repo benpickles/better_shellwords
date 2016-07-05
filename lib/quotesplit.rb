@@ -1,6 +1,6 @@
 require 'strscan'
 
-class BetterShellwords
+class Quotesplit
   VERSION = '0.1.0'
 
   NON_WHITESPACE = /\S+/

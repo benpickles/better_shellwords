@@ -1,14 +1,18 @@
-# Better Shellwords
+# Quotesplit
 
-[![Build Status](https://travis-ci.org/benpickles/better_shellwords.svg?branch=master)](https://travis-ci.org/benpickles/better_shellwords)
+[![Build Status](https://travis-ci.org/benpickles/quotesplit.svg?branch=master)](https://travis-ci.org/benpickles/quotesplit)
 
-If you've ever wanted to use `Shellwords.split` but encountered `ArgumentError: Unmatched double quote` you'll understand why I wanted something better.
+Quote-aware whitespace string splitting like `Shellwords.split` but doesn't raise `ArgumentError: Unmatched double quote`.
+
+```ruby
+require 'quotesplit'
+
+Quotesplit.new("It's a Wonderful Life").split
+# => ["It's", "a", "Wonderful", "Life"]
+```
 
 ```ruby
 require 'shellwords'
-
-Shellwords.split("It is a Wonderful Life")
-# => ["It", "is", "a", "Wonderful", "Life"]
 
 Shellwords.split("It's a Wonderful Life")
 # ArgumentError: Unmatched double quote: "It's a Wonderful Life"

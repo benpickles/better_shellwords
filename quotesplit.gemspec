@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'better_shellwords'
+require 'quotesplit'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'better_shellwords'
-  spec.version       = BetterShellwords::VERSION
+  spec.name          = 'quotesplit'
+  spec.version       = Quotesplit::VERSION
   spec.authors       = ['Ben Pickles']
   spec.email         = ['spideryoung@gmail.com']
 
