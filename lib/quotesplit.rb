@@ -24,7 +24,7 @@ class Quotesplit
   def split
     words = []
 
-    while !scanner.eos?
+    until scanner.eos?
       next_char = scanner.peek(1)
 
       if next_char == DOUBLE_QUOTE || next_char == SINGLE_QUOTE
