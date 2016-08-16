@@ -9,8 +9,8 @@ class Quotesplit
   WHITESPACE = /\s+/
 
   QUOTES = {
-    DOUBLE_QUOTE => /"[^"]+"/,
-    SINGLE_QUOTE => /'[^']+'/,
+    DOUBLE_QUOTE => /"[^"]*"/,
+    SINGLE_QUOTE => /'[^']*'/,
   }
 
   def self.split(string)

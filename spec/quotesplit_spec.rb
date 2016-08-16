@@ -40,6 +40,16 @@ RSpec.describe Quotesplit do
       it { should eql(["'"]) }
     end
 
+    context 'empty ""' do
+      let(:string) { ' "" "" ' }
+      it { should eql(['', '']) }
+    end
+
+    context '" "' do
+      let(:string) { ' " " " " ' }
+      it { should eql([' ', ' ']) }
+    end
+
     context '"quoted"' do
       let(:string) { ' "quoted  term" ' }
       it { should eql(['quoted  term']) }
@@ -58,6 +68,16 @@ RSpec.describe Quotesplit do
     context 'another unbalanced" quote' do
       let(:string) { 'another unbalanced" quote' }
       it { should eql(['another', 'unbalanced"', 'quote']) }
+    end
+
+    context "empty ''" do
+      let(:string) { " '' '' " }
+      it { should eql(['', '']) }
+    end
+
+    context "' '" do
+      let(:string) { " ' ' ' ' " }
+      it { should eql([' ', ' ']) }
     end
 
     context "'quoted'" do
